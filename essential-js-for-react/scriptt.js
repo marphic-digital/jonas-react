@@ -145,7 +145,7 @@ function getBook(id) {
 
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
-const book = getBook(3);
+const books = getBooks();
 //* Rest Operator
 // const { title, genres, ...others } = book;  //Rest Operator
 // const [primaryGenre, secondaryGenre, ...others] = genres; // rest operator
@@ -160,17 +160,24 @@ const book = getBook(3);
 
 //* Short Circuiting and Logical Operator
 //! "&&"
-const and = true && "some string"; // return 'some string'
-const ifFalse = false && "some string"; // return false
+// const and = true && "some string"; // return 'some string'
+// const ifFalse = false && "some string"; // return false
 //! "||" OR Operator is opposite of '&&'
-const or = true || "some string"; // return true
-const t = false || "some string"; // return "some string"
+// const or = true || "some string"; // return true
+// const t = false || "some string"; // return "some string"
 //! "??" Nullish Coalescing Operator
 
 //* Optional Chaining
-function getTotalReviewCount(book) {
-  const goodreads = book.reviews.goodreads.reviewsCount;
-  const librarything = book.reviews.librarything?.reviewsCount ?? 0; // optinal chainging
-  return goodreads + librarything;
-}
-console.log(getTotalReviewCount(book));
+// function getTotalReviewCount(book) {
+//   const goodreads = book.reviews.goodreads.reviewsCount;
+//   const librarything = book.reviews.librarything?.reviewsCount ?? 0; // optinal chainging
+//   return goodreads + librarything;
+// }
+// console.log(getTotalReviewCount(book));
+
+//* Array.prototype.reduce
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+pagesAllBooks;
+
+const getMax = (a, b) => Math.max(a, b);
+console.log(getMax(1, 100));
