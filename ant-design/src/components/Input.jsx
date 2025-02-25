@@ -1,7 +1,7 @@
-import React from "react";
 import { Input, Select, Space } from "antd";
 
 const { Option } = Select;
+// const { search } = input;
 const selectBefore = (
   <Select defaultValue="http://">
     <Option value="http://">http://</Option>
@@ -17,6 +17,16 @@ const selectAfter = (
   </Select>
 );
 
+// const Option = [
+//   {
+//     value: "zhejiang",
+//     label: "Zhejiang",
+//   },
+//   {
+//     value: "jiangsu",
+//     label: "Jiangsu",
+//   },
+// ];
 const Index = () => {
   return (
     <>
@@ -38,6 +48,13 @@ const Index = () => {
             defaultValue="mySite"
           ></Input>
         </Space>
+      </div>
+      <div>
+        <Input defaultValue="32103"></Input>
+        <Space.Compact>
+          <Input style={{ width: "20%" }} defaultValue="+92"></Input>
+          <Input style={{ width: "80%" }} defaultValue="1234567"></Input>
+        </Space.Compact>
       </div>
     </>
   );
